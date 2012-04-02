@@ -27,7 +27,7 @@ class Enom
      * Initializes Enom
      *
      *
-     * @param string $url Enom reseller URL
+     * @param string $url      Enom reseller URL
      * @param string $username Enom Account login ID
      * @param string $password Enom Account password
      */

@@ -42,6 +42,7 @@ class SOGEnomExtension extends Extension
 
     /**
      * @codeCoverageIgnore
+     * @return string
      */
     public function getXsdValidationBasePath()
     {
@@ -58,9 +59,11 @@ class SOGEnomExtension extends Extension
     }
 
     /**
+     * @param ContainerBuilder $container A ContainerBuilder instance
+     *
      * @codeCoverageIgnore
      */
-    protected function loadDefaults($container)
+    protected function loadDefaults(ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 

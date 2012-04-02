@@ -25,9 +25,9 @@ class HttpClient
     /**
      * Initializes Http client
      *
-     * @param string $url       Enom reseller URL
-     * @param string $username  Enom Account login ID
-     * @param string $password  Enom Account password
+     * @param string $url      Enom reseller URL
+     * @param string $username Enom Account login ID
+     * @param string $password Enom Account password
      */
     public function __construct($url, $username, $password)
     {
@@ -46,12 +46,12 @@ class HttpClient
      */
     protected function makeRequest($command, $payload)
     {
-        $payload['uid'] = $this->username;
-        $payload['pw'] = $this->password;
         $payload['command'] = $command;
+        $payload['uid']     = $this->username;
+        $payload['pw']      = $this->password;
 
         $url = $this->url . '/interface.asp?' . http_build_query($payload);
-        }
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -71,14 +71,15 @@ class HttpClient
      *
      * @return json
      */
-    private function xml2json($xml){
-        $array = json_decode(json_encode($xml), TRUE);
+    private function xml2json($xml)
+    {
+        $array = json_decode(json_encode($xml), true);
 
-        foreach ( array_slice($array, 0) as $key => $value ) {
-            if ( empty($value) ) {
-                $array[$key] = NULL;
+        foreach (array_slice($array, 0) as $key => $value) {
+            if (empty($value)) {
+                $array[$key] = null;
             }
-            elseif ( is_array($value) ) {
+            elseif (is_array($value)) {
                 $array[$key] = toArray($value);
             }
         }

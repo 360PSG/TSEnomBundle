@@ -40,7 +40,7 @@ class EnomTest extends \PHPUnit_Framework_TestCase
      */
     public function testEnomConstruct()
     {
-        $enom = new Enom('https://reseller.enom.com','reseller_uid', 'reseller_pw');
+        $enom = new Enom('https://reseller.enom.com', 'reseller_uid', 'reseller_pw');
 
         $this->assertEquals('https://reseller.enom.com', $enom->getUrl());
         $this->assertEquals('reseller_uid', $enom->getUsername());

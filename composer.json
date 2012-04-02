@@ -1,0 +1,23 @@
+{
+    "name": "sog/enom-bundle",
+    "type": "symfony-bundle",
+    "description": "enom bundle",
+    "keywords": ["enom","api"],
+    "homepage": "https://github.com/shaneog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane O'Grady",
+            "email": "shane.ogrady@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "ext-curl":"*"
+    },
+    "autoload": {
+        "psr-0": { "SOG\\EnomBundle": "" }
+    },
+    "target-dir": "SOG/EnomBundle"
+}

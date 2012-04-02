@@ -1,6 +1,8 @@
 # SOGEnomBundle
 Symfony2 bundle for the [Enom](http://www.enom.com/resellers/api-reseller.aspx) API.
 
+[![Build Status](https://secure.travis-ci.org/shaneog/SOGEnomBundle.png)](http://travis-ci.org/shaneog/SOGEnomBundle)
+
 **License**
 
 SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENSE` file for details

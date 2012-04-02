@@ -38,7 +38,11 @@ class Enom
         $this->password = $password;
 
         if (!function_exists('curl_init')) {
-            throw new Exception('This bundle needs the cURL PHP extension.');
+            throw new \Exception('This bundle needs the cURL PHP extension.');
+        }
+
+        if (!extension_loaded('simplexml')) {
+            throw new \Exception('This bundle needs the SimpleXML PHP extension.');
         }
     }
 

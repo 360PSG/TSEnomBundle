@@ -11,6 +11,8 @@
 
 namespace SOG\EnomBundle\Services;
 
+use SOG\EnomBundle\Services\EnomException;
+
 /**
  * cURL client
  *
@@ -64,7 +66,13 @@ class HttpClient
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return simplexml_load_string($result);
+        $xml = simplexml_load_string($result);
+
+        if ((isset($xml->ErrCount)) && ((int) $xml->ErrCount > 0)) {
+            throw new EnomException($xml->errors->Err1);
+        }
+
+        return $xml;
     }
 
 }

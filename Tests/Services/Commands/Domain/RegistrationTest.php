@@ -67,4 +67,25 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(10, (int) $data->MaxPeriod);
 
     }
+
+    /**
+     * Test email order confirmation settings
+     *
+     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::check
+     */
+    public function testRegistrationGetConfirmationSettings()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellid', 'resellpw');
+
+        $data = $enom->getDomainRegistration()->getConfirmationSettings();
+
+        $this->assertEquals("True", $data->OrderConfirmation);
+        $this->assertEquals("True", $data->TransferOrderConfirmation);
+        $this->assertEquals("True", $data->OrderConfirmationBCC);
+        $this->assertEquals("True", $data->TransferOrderConfirmationBCC);
+        $this->assertEquals("&#12486;&#12473;&#12488;", $data->EmailHead);
+        $this->assertEquals("&#12486;&#12473;&#12488;", $data->EmailTail);
+
+    }
 }

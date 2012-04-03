@@ -8,12 +8,14 @@ Symfony2 bundle for the [Enom](http://www.enom.com/resellers/api-reseller.aspx) 
 SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENSE` file for details
 
 **Enom API Commands Supported**
+*See [API Command Catalog](http://www.enom.com/APICommandCatalog/index.htm) for more details*
 
 1. GetAccountInfo
 2. GetTLDList
 3. GetServiceContact
 4. GetOrderList
 5. Check (domain registration)
+6. GetConfirmationSettings
 
 *more coming soon*
 

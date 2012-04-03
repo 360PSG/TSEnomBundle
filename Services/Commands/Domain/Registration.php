@@ -57,4 +57,27 @@ class Registration extends HttpClient
 
         return $data->ConfirmationSettings;
     }
+
+    /**
+     * This command retrieves the extended attributes for a country code TLD (required parameters specific to the country code)
+     *
+     * @param string $tld The Country Code Top Level Domain to check for extended attributes
+     *
+     * @return SimpleXMLElement
+     */
+    public function getExtAttributes($tld)
+    {
+        // Strip out any leading periods, e.g. ".co.uk" or ".de"
+        $tld = ltrim($tld, " .");
+        if (empty($tld)) {
+            throw new \InvalidArgumentException("TLD cannot be empty");
+        }
+
+        $this->payload["tld"] = $tld;
+
+        $command = 'GetExtAttributes';
+        $data = $this->makeRequest($command, $this->payload);
+
+        return $data->Attributes;
+    }
 }

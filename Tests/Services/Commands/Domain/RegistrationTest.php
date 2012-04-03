@@ -71,7 +71,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test email order confirmation settings
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::check
+     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getConfirmationSettings
      */
     public function testRegistrationGetConfirmationSettings()
     {
@@ -87,5 +87,38 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("&#12486;&#12473;&#12488;", $data->EmailHead);
         $this->assertEquals("&#12486;&#12473;&#12488;", $data->EmailTail);
 
+    }
+
+    /**
+     * Test extended attributes, when empty parameter passed
+     *
+     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
+     *
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRegistrationExtAttributesEmpty()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellerid', 'resellpw');
+
+        // Pass in a whitespace string to ensure it's getting trimmed
+        $data = $enom->getDomainRegistration()->getExtAttributes(" ");
+
+    }
+
+    /**
+     * Test extended attributes
+     *
+     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
+     */
+    public function testRegistrationExtAttributes()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellerid', 'resellpw');
+
+        $data = $enom->getDomainRegistration()->getExtAttributes("co.uk");
+
+        // Ensure we have 4 attributes for .co.uk TLD
+        $this->assertEquals(4, $data->children()->count());
     }
 }

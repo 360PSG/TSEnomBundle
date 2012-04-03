@@ -21,7 +21,6 @@ use SOG\EnomBundle\Services\HttpClient;
  */
 class Account extends HttpClient
 {
-    private $payload = array();
 
     /**
      * Get Account Info

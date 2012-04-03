@@ -24,6 +24,8 @@ class HttpClient
     protected $username;
     protected $password;
 
+    protected $payload = array();
+
     /**
      * Initializes Http client
      *

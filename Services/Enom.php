@@ -86,4 +86,14 @@ class Enom
     {
         return new Commands\Account($this->url, $this->username, $this->password);
     }
+
+    /**
+     * Get Domain Registration commands
+     *
+     * @return Commands\Domain\Registration
+     */
+    public function getDomainRegistration()
+    {
+        return new Commands\Domain\Registration($this->url, $this->username, $this->password);
+    }
 }

@@ -28,7 +28,7 @@ SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENS
    // app/autoload.php
    $loader->registerNamespaces(array(
     // ...
-    'SOG'               => __DIR__.'/../vendor/bundles',
+    'SOG' => __DIR__.'/../vendor/bundles',
   ));
 ```
 **Add SOGEnomBundle to your application kernel**
@@ -60,5 +60,5 @@ sog_enom:
 
 ``` php
 <?php
-        $enom = $this->get('Enom');
+    $enom = $this->get('Enom');
 ```

@@ -77,5 +77,13 @@ class Enom
         return $this->password;
     }
 
-
+    /**
+     * Get Account commands
+     *
+     * @return Commands\Account
+     */
+    public function getAccount()
+    {
+        return new Commands\Account($this->url, $this->username, $this->password);
+    }
 }

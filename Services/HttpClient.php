@@ -42,13 +42,16 @@ class HttpClient
      * @param string $command Enom API command/method
      * @param string $payload Request information
      *
-     * @return json
+     * @return SimpleXMLElement
      */
     protected function makeRequest($command, $payload)
     {
         $payload['command'] = $command;
         $payload['uid']     = $this->username;
         $payload['pw']      = $this->password;
+        // We want to return XML and not plain text
+        // A JSON response is not yet implemented by Enom
+        $payload['responsetype']      = "XML";
 
         $url = $this->url . '/interface.asp?' . http_build_query($payload);
 
@@ -61,30 +64,7 @@ class HttpClient
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return $this->xml2json($result);
-    }
-
-    /**
-     * Convert the returned XML to JSON
-     *
-     * @param string $xml The Enom XML to convert to JSON
-     *
-     * @return json
-     */
-    private function xml2json($xml)
-    {
-        $array = json_decode(json_encode($xml), true);
-
-        foreach (array_slice($array, 0) as $key => $value) {
-            if (empty($value)) {
-                $array[$key] = null;
-            }
-            elseif (is_array($value)) {
-                $array[$key] = toArray($value);
-            }
-        }
-
-       return json_encode($array);
+        return simplexml_load_string($result);
     }
 
 }

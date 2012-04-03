@@ -9,7 +9,8 @@ SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENS
 
 **Enom API Commands Supported**
 
-1. `TBC`
+1. GetAccountInfo
+2. *more coming soon*
 
 
 ## Setup

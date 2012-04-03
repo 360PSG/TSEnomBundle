@@ -24,7 +24,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test Enom account class
      *
-     * @covers SOG\EnomBundle\Services\Command\Account
+     * @covers SOG\EnomBundle\Services\Commands\Account
      */
     public function testAccount()
     {
@@ -36,7 +36,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getAccountInfo
      *
-     * @covers SOG\EnomBundle\Services\Enom::getAccountInfo
+     * @covers SOG\EnomBundle\Services\Commands\Account::getAccountInfo
      */
     public function testGetAccountInfo()
     {
@@ -56,7 +56,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getTldList
      *
-     * @covers SOG\EnomBundle\Services\Enom::getTldList
+     * @covers SOG\EnomBundle\Services\Commands\Account::getTldList
      */
     public function testGetTldList()
     {
@@ -72,7 +72,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getServiceContact
      *
-     * @covers SOG\EnomBundle\Services\Enom::getServiceContact
+     * @covers SOG\EnomBundle\Services\Commands\Account::getServiceContact
      */
     public function testGetServiceContact()
     {
@@ -90,7 +90,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getOrderList
      *
-     * @covers SOG\EnomBundle\Services\Enom::getOrderList
+     * @covers SOG\EnomBundle\Services\Commands\Account::getOrderList
      *
      * @expectedException SOG\EnomBundle\Services\EnomException
      */

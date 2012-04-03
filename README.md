@@ -1,5 +1,6 @@
 # SOGEnomBundle
 Symfony2 bundle for the [Enom](http://www.enom.com/resellers/api-reseller.aspx) API.
+This wraps the Enom API in a Symfony2 bundle.
 
 [![Build Status](https://secure.travis-ci.org/shaneog/SOGEnomBundle.png)](http://travis-ci.org/shaneog/SOGEnomBundle)
 
@@ -8,7 +9,8 @@ Symfony2 bundle for the [Enom](http://www.enom.com/resellers/api-reseller.aspx) 
 SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENSE` file for details
 
 **Enom API Commands Supported**
-*See [API Command Catalog](http://www.enom.com/APICommandCatalog/index.htm) for more details*
+
+*(See [API Command Catalog](http://www.enom.com/APICommandCatalog/index.htm) for more details)*
 
 1. GetAccountInfo
 2. GetTLDList

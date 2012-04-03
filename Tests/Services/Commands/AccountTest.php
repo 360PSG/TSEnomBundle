@@ -41,7 +41,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     public function testGetAccountInfo()
     {
         // Use live Enom test credentials
-        $enom = new Enom('https://resellertest.enom.com', 'resellerid', 'resellpw');
+        $enom = new Enom('http://resellertest.enom.com', 'resellerid', 'resellpw');
 
         $data = $enom->getAccount()->getAccountInfo();
 
@@ -61,7 +61,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     public function testGetTldList()
     {
         // Use live Enom test credentials
-        $enom = new Enom('https://resellertest.enom.com', 'resellerid', 'resellpw');
+        $enom = new Enom('http://resellertest.enom.com', 'resellerid', 'resellpw');
 
         $data = $enom->getAccount()->getTldList();
 

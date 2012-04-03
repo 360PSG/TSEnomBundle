@@ -52,4 +52,20 @@ class AccountTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("False", $data->Reseller);
         $this->assertEquals("False", $data->AcceptTerms);
     }
+
+    /**
+     * Test getTldList
+     *
+     * @covers SOG\EnomBundle\Services\Enom::getTldList
+     */
+    public function testGetTldList()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('https://resellertest.enom.com', 'resellerid', 'resellpw');
+
+        $data = $enom->getAccount()->getTldList();
+
+        // With 104 results I'm not going to write an assertEquals for each of  them
+        $this->assertEquals(104, (int)$data->tldcount);
+    }
 }

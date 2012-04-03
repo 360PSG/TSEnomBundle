@@ -26,7 +26,7 @@ class Account extends HttpClient
     /**
      * Get Account Info
      *
-     * @return array Account Information
+     * @return SimpleXMLElement Account Information
      */
     public function getAccountInfo()
     {
@@ -34,5 +34,18 @@ class Account extends HttpClient
         $data = $this->makeRequest($command, $this->payload);
 
         return $data->GetAccountInfo;
+    }
+
+    /**
+     * Get TLD list
+     *
+     * @return SimpleXMLElement
+     */
+    public function getTldList()
+    {
+        $command = 'GetTLDList';
+        $data = $this->makeRequest($command, $this->payload);
+
+        return $data->tldlist;
     }
 }

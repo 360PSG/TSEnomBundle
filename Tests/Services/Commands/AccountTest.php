@@ -86,4 +86,23 @@ class AccountTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("john.doe@resellerdocs.com", $data->EmailAddress);
         $this->assertEquals("+1.4252744500", $data->Phone);
     }
+
+    /**
+     * Test getOrderList
+     *
+     * @covers SOG\EnomBundle\Services\Enom::getOrderList
+     *
+     * @expectedException SOG\EnomBundle\Services\EnomException
+     */
+    public function testGetOrderList()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellid', 'resellpw');
+
+        // For some reason Enom's public API username and password do not work
+        // with this command, and so an exception will be thrown.
+        // We expect this and test for it here (see annotations)
+        $data = $enom->getAccount()->getOrderList();
+
+    }
 }

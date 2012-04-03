@@ -66,6 +66,24 @@ class AccountTest extends \PHPUnit_Framework_TestCase
         $data = $enom->getAccount()->getTldList();
 
         // With 104 results I'm not going to write an assertEquals for each of  them
-        $this->assertEquals(104, (int)$data->tldcount);
+        $this->assertEquals(104, (int) $data->tldcount);
+    }
+
+    /**
+     * Test getServiceContact
+     *
+     * @covers SOG\EnomBundle\Services\Enom::getServiceContact
+     */
+    public function testGetServiceContact()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellid', 'resellpw');
+
+        $data = $enom->getAccount()->getServiceContact();
+
+        // Check a couple of properties
+        $this->assertEquals("Extraordinary Sales", $data->Organization);
+        $this->assertEquals("john.doe@resellerdocs.com", $data->EmailAddress);
+        $this->assertEquals("+1.4252744500", $data->Phone);
     }
 }

@@ -11,6 +11,7 @@ SOGEnomBundle is licensed under the MIT License - see the `Resources/meta/LICENS
 
 1. GetAccountInfo
 2. GetTLDList
+3. GetServiceContact
 *more coming soon*
 
 

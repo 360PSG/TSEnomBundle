@@ -80,4 +80,51 @@ class Registration extends HttpClient
 
         return $data->Attributes;
     }
+
+    /**
+     * Purchase a domain name in real time.
+     *
+     * @param string $tld The Country Code Top Level Domain to check for extended attributes
+     *
+     * @return SimpleXMLElement
+     */
+    public function purchase($domain, $numyears = 1, $autorenew = false, array $nameservers = null, $unlock = false, $password = null )
+    {
+        // Domain name
+        $domain = trim($domain);
+        if (empty($domain)) {
+            throw new \InvalidArgumentException("Domain cannot be empty");
+        }
+        $pieces = explode(".", $domain);
+        $this->payload["sld"] = $pieces[0];
+        $this->payload["tld"] = $pieces[1];
+
+        // Name servers
+        if (is_array($nameservers) && (count($nameservers) > 0)) {
+            foreach ($nameservers as $i => $server) {
+                $this->payload["ns".($i+1)] = $server;
+            }
+        } else {
+            $this->payload["usedns"] = "default";
+        }
+
+        // Locked or Not
+        $this->payload["unlockregistrar"] = (int) $unlock;
+
+        // AutoRenew
+        $this->payload["renewname"] = (int) $autorenew;
+
+        // Password
+        if (!empty($password)) {
+            $this->payload["domainpassword"] = $password;
+        }
+
+        // Number of Years to register for
+        $this->payload["numyears"] = (int) $numyears;
+
+        $command = 'Purchase';
+        $data = $this->makeRequest($command, $this->payload);
+
+        return $data;
+    }
 }

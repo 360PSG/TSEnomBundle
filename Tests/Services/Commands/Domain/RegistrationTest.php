@@ -121,4 +121,18 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
         // Ensure we have 4 attributes for .co.uk TLD
         $this->assertEquals(4, $data->children()->count());
     }
+
+    /**
+     * Test purchase
+     *
+     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::purchase
+     *
+    public function testRegistrationPurchase()
+    {
+        // Use live Enom test credentials
+        $enom = new Enom('http://resellertest.enom.com', 'resellid', 'resellpw');
+
+        $data = $enom->getDomainRegistration()->purchase("anydomain.com");
+    }
+    */
 }

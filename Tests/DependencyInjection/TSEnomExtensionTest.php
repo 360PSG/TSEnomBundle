@@ -11,7 +11,7 @@
 
 namespace TS\Bundle\EnomBundle\Tests\DependencyInjection;
 
-use TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension;
+use TS\Bundle\EnomBundle\DependencyInjection\TSEnomExtension;
 
 /**
  * Test SOGEnomExtension
@@ -32,7 +32,7 @@ class SOGEnomExtensionTest extends \PHPUnit_Framework_TestCase
                 ->disableOriginalConstructor()
                 ->getMock();
 
-        $extension = $this->getMockBuilder('TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension')
+        $extension = $this->getMockBuilder('TS\Bundle\EnomBundle\DependencyInjection\TSEnomExtension')
                 ->getMock();
 
         $extension->load(array(array()), $container);
@@ -60,7 +60,7 @@ class SOGEnomExtensionTest extends \PHPUnit_Framework_TestCase
                 ->method('getParameterBag')
                 ->will($this->returnValue($parameterBag));
 
-        $extension = new SOGEnomExtension();
+        $extension = new TSEnomExtension();
         $configs = array(
             array('url' => 'foo'),
             array('username' => 'foobar'),

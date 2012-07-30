@@ -10,20 +10,21 @@
 */
 
 $vendorDir = __DIR__.'/../vendor';
-require_once $vendorDir.'/symfony/src/Symfony/Component/ClassLoader/UniversalClassLoader.php';
+require_once $vendorDir.'/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
 
-use Symfony\Component\ClassLoader\UniversalClassLoader;
+require_once __DIR__ . '/../vendor/autoload.php';
+//use Symfony\Component\ClassLoader\UniversalClassLoader;
 
-$loader = new UniversalClassLoader();
-$loader->registerNamespaces(array(
-    'Symfony'                => array($vendorDir.'/symfony/src'),
-));
+//$loader = new UniversalClassLoader();
+//$loader->registerNamespaces(array(
+    //'Symfony'                => array($vendorDir.'/symfony/src'),
+//));
 
-$loader->register();
+//$loader->register();
 
 spl_autoload_register(function($class) {
-    if (0 === strpos($class, 'SOG\\EnomBundle\\')) {
-        $path = __DIR__.'/../'.implode('/', array_slice(explode('\\', $class), 2)).'.php';
+    if (0 === strpos($class, 'TS\\Bundle\\EnomBundle\\')) {
+        $path = __DIR__.'/../'.implode('/', array_slice(explode('\\', $class), 3)).'.php';
         if (!stream_resolve_include_path($path)) {
             return false;
         }

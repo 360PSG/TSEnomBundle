@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Services;
+namespace TS\Bundle\EnomBundle\Services;
 
-use SOG\EnomBundle\Services\EnomException;
+use TS\Bundle\EnomBundle\Services\EnomException;
 
 /**
  * cURL client

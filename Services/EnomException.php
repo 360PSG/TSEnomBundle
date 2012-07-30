@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Services;
+namespace TS\Bundle\EnomBundle\Services;
 
 /**
  * Custom Enom Exception

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\DependencyInjection;
+namespace TS\Bundle\EnomBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sog_enom');
+        $rootNode = $treeBuilder->root('ts_enom');
 
         $rootNode->children()
                 ->scalarNode('url')

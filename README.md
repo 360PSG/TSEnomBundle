@@ -52,7 +52,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new SOG\EnomBundle\SOGEnomBundle(),
+        new TS\Bundle\EnomBundle\SOGEnomBundle(),
     );
 }
 ```
@@ -60,7 +60,7 @@ public function registerBundles()
 
 ``` yml
 # app/config/config.yml
-sog_enom:
+ts_enom:
   url: #Enom Reseller URL
   username: #Enom Account login ID
   password: #Enom Account password

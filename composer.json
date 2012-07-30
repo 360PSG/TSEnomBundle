@@ -1,14 +1,18 @@
 {
-    "name": "sog/enom-bundle",
+    "name": "ts/enom-bundle",
     "type": "symfony-bundle",
     "description": "enom bundle",
     "keywords": ["enom","api"],
-    "homepage": "https://github.com/shaneog",
+    "homepage": "https://github.com/360PSG",
     "license": "MIT",
     "authors": [
         {
             "name": "Shane O'Grady",
             "email": "shane.ogrady@gmail.com"
+        },
+        {
+            "name":  "360PSG",
+            "email": ""
         }
     ],
     "require": {
@@ -17,7 +21,7 @@
         "ext-curl":"*"
     },
     "autoload": {
-        "psr-0": { "SOG\\EnomBundle": "" }
+        "psr-0": { "TS\\Bundle\\EnomBundle": "" }
     },
-    "target-dir": "SOG/EnomBundle"
+    "target-dir": "TS/Bundle/EnomBundle"
 }

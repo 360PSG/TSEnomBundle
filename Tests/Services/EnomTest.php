@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Tests\Services;
+namespace TS\Bundle\EnomBundle\Tests\Services;
 
-use SOG\EnomBundle\Services\Enom;
+use TS\Bundle\EnomBundle\Services\Enom;
 
 /**
  * Test enom
@@ -24,19 +24,19 @@ class EnomTest extends \PHPUnit_Framework_TestCase
     /**
      * Test Enom class
      *
-     * @covers SOG\EnomBundle\Services\Enom
+     * @covers TS\Bundle\EnomBundle\Services\Enom
      */
     public function testEnom()
     {
         $enom = $this
-                ->getMockBuilder('SOG\EnomBundle\Services\Enom')
+                ->getMockBuilder('TS\Bundle\EnomBundle\Services\Enom')
                 ->disableOriginalConstructor()->getMock();
     }
 
     /**
      * Test Enom constructor
      *
-     * @covers SOG\EnomBundle\Services\Enom::__construct
+     * @covers TS\Bundle\EnomBundle\Services\Enom::__construct
      */
     public function testEnomConstruct()
     {

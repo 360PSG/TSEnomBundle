@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Tests\Services\Commands;
+namespace TS\Bundle\EnomBundle\Tests\Services\Commands;
 
-use SOG\EnomBundle\Services\Enom;
+use TS\Bundle\EnomBundle\Services\Enom;
 
 /**
  * Test Enom Account commands
@@ -24,19 +24,19 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test Enom account class
      *
-     * @covers SOG\EnomBundle\Services\Commands\Account
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Account
      */
     public function testAccount()
     {
         $enom = $this
-                ->getMockBuilder('SOG\EnomBundle\Services\Commands\Account')
+                ->getMockBuilder('TS\Bundle\EnomBundle\Services\Commands\Account')
                 ->disableOriginalConstructor()->getMock();
     }
 
     /**
      * Test getAccountInfo
      *
-     * @covers SOG\EnomBundle\Services\Commands\Account::getAccountInfo
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Account::getAccountInfo
      */
     public function testGetAccountInfo()
     {
@@ -56,7 +56,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getTldList
      *
-     * @covers SOG\EnomBundle\Services\Commands\Account::getTldList
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Account::getTldList
      */
     public function testGetTldList()
     {
@@ -72,7 +72,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getServiceContact
      *
-     * @covers SOG\EnomBundle\Services\Commands\Account::getServiceContact
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Account::getServiceContact
      */
     public function testGetServiceContact()
     {
@@ -90,9 +90,9 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getOrderList
      *
-     * @covers SOG\EnomBundle\Services\Commands\Account::getOrderList
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Account::getOrderList
      *
-     * @expectedException SOG\EnomBundle\Services\EnomException
+     * @expectedException TS\Bundle\EnomBundle\Services\EnomException
      */
     public function testGetOrderList()
     {

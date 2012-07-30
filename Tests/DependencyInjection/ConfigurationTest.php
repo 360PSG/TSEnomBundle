@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Tests\DependencyInjection;
+namespace TS\Bundle\EnomBundle\Tests\DependencyInjection;
 
-use SOG\EnomBundle\DependencyInjection\Configuration;
+use TS\Bundle\EnomBundle\DependencyInjection\Configuration;
 
 /**
  * Test Configuration
@@ -24,7 +24,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test can get config tree
      *
-     * @covers SOG\EnomBundle\DependencyInjection\Configuration::getConfigTreeBuilder
+     * @covers TS\Bundle\EnomBundle\DependencyInjection\Configuration::getConfigTreeBuilder
      */
     public function testThatCanGetConfigTreeBuilder()
     {

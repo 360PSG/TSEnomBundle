@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Tests\DependencyInjection;
+namespace TS\Bundle\EnomBundle\Tests\DependencyInjection;
 
-use SOG\EnomBundle\DependencyInjection\SOGEnomExtension;
+use TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension;
 
 /**
  * Test SOGEnomExtension
@@ -24,7 +24,7 @@ class SOGEnomExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * Test load failed
      *
-     * @covers SOG\EnomBundle\DependencyInjection\SOGEnomExtension::load
+     * @covers TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension::load
      */
     public function testLoadFailed()
     {
@@ -32,7 +32,7 @@ class SOGEnomExtensionTest extends \PHPUnit_Framework_TestCase
                 ->disableOriginalConstructor()
                 ->getMock();
 
-        $extension = $this->getMockBuilder('SOG\EnomBundle\DependencyInjection\SOGEnomExtension')
+        $extension = $this->getMockBuilder('TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension')
                 ->getMock();
 
         $extension->load(array(array()), $container);
@@ -41,7 +41,7 @@ class SOGEnomExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setParameters
      *
-     * @covers SOG\EnomBundle\DependencyInjection\SOGEnomExtension::load
+     * @covers TS\Bundle\EnomBundle\DependencyInjection\SOGEnomExtension::load
      */
     public function testLoadSetParameters()
     {

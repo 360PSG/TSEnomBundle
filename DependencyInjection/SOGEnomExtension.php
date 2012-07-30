@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\DependencyInjection;
+namespace TS\Bundle\EnomBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -35,7 +35,7 @@ class SOGEnomExtension extends Extension
 
         foreach (array('url', 'username', 'password') as $attribute) {
             if (isset($config[$attribute])) {
-                $container->setParameter('sog_enom.' . $attribute, $config[$attribute]);
+                $container->setParameter('ts_enom.' . $attribute, $config[$attribute]);
             }
         }
     }
@@ -55,7 +55,7 @@ class SOGEnomExtension extends Extension
      */
     public function getNamespace()
     {
-        return 'http://symfony.com/schema/dic/sog_enom';
+        return 'http://symfony.com/schema/dic/ts_enom';
     }
 
     /**

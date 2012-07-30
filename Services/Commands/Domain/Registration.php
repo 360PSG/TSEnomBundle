@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Services\Commands\Domain;
+namespace TS\Bundle\EnomBundle\Services\Commands\Domain;
 
-use SOG\EnomBundle\Services\HttpClient;
+use TS\Bundle\EnomBundle\Services\HttpClient;
 
 /**
  * Enom Domain Registration related operations

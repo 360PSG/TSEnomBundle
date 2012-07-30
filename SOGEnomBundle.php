@@ -1,6 +1,6 @@
 <?php
 
-namespace SOG\EnomBundle;
+namespace TS\Bundle\EnomBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -9,6 +9,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Shane O'Grady <shane.ogrady@gmail.com>
  */
-class SOGEnomBundle extends Bundle
+class TSEnomBundle extends Bundle
 {
 }

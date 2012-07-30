@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SOG\EnomBundle\Tests\Services\Commands\Domain;
+namespace TS\Bundle\EnomBundle\Tests\Services\Commands\Domain;
 
-use SOG\EnomBundle\Services\Enom;
+use TS\Bundle\EnomBundle\Services\Enom;
 
 /**
  * Test Enom Domain registration commands
@@ -24,19 +24,19 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test Enom Domain Registration class
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration
      */
     public function testRegistration()
     {
         $enom = $this
-                ->getMockBuilder('SOG\EnomBundle\Services\Commands\Domain\Registration')
+                ->getMockBuilder('TS\Bundle\EnomBundle\Services\Commands\Domain\Registration')
                 ->disableOriginalConstructor()->getMock();
     }
 
     /**
      * Test check domain availability
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::check
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::check
      *
      * @expectedException \InvalidArgumentException
      */
@@ -53,7 +53,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test check domain availability
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::check
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::check
      */
     public function testRegistrationCheck()
     {
@@ -71,7 +71,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test email order confirmation settings
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getConfirmationSettings
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::getConfirmationSettings
      */
     public function testRegistrationGetConfirmationSettings()
     {
@@ -92,7 +92,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test extended attributes, when empty parameter passed
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
      *
      * @expectedException \InvalidArgumentException
      */
@@ -109,7 +109,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test extended attributes
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::getExtAttributes
      */
     public function testRegistrationExtAttributes()
     {
@@ -125,7 +125,7 @@ class RegistrationTest extends \PHPUnit_Framework_TestCase
     /**
      * Test purchase
      *
-     * @covers SOG\EnomBundle\Services\Commands\Domain\Registration::purchase
+     * @covers TS\Bundle\EnomBundle\Services\Commands\Domain\Registration::purchase
      *
     public function testRegistrationPurchase()
     {

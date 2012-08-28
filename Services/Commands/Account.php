@@ -11,7 +11,7 @@
 
 namespace TS\Bundle\EnomBundle\Services\Commands;
 
-use TS\Bundle\EnomBundle\Services\HttpClient;
+use TS\Bundle\EnomBundle\Services\Enom;
 
 /**
  * Enom Account Related operations
@@ -19,7 +19,7 @@ use TS\Bundle\EnomBundle\Services\HttpClient;
  * @author Shane O'Grady <shane.ogrady@gmail.com>
  * @link   http://www.enom.com/APICommandCatalog/index.htm
  */
-class Account extends HttpClient
+class Account extends Enom
 {
 
     /**

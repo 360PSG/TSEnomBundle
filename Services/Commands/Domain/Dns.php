@@ -49,7 +49,7 @@ class Dns extends Enom
             $tmp_arr['RecordType'] = $data['RecordType'.$i];
             $tmp_arr['Address'] = $data['Address'.$i];
             if ( $tmp_arr['RecordType'] == 'MX' ) {
-                $tmp_arr['MxPref'] = $data['MxPref'.$i];
+                $tmp_arr['MXPref'] = $data['MXPref'.$i];
             }
             $results[$data['hostid'.$i]] = $tmp_arr;
         }
@@ -79,8 +79,8 @@ class Dns extends Enom
             $this->payload['HostName'.$i]   = $record['HostName'];
             $this->payload['Address'.$i]    = $record['Address'];
             $this->payload['RecordType'.$i] = $record['RecordType'];
-            if ( isset($record['MxPref']) ) {
-                $this->payload['MxPref'.$i] = $record['MxPref'];
+            if ( isset($record['MXPref']) ) {
+                $this->payload['MXPref'.$i] = $record['MXPref'];
             }
             $i++;
         }
